@@ -1,0 +1,8 @@
+create_table("widgets") {
+    t.Column("id", "integer", {primary: true})
+    t.Column("name", "string", {"default": ""})
+    t.Column("description", "text", {"null": true})
+    t.Column("inventory_level", "integer", {})
+    t.Column("price", "integer", {})
+}
+
