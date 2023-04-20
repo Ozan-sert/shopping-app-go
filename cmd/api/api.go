@@ -26,8 +26,6 @@ type config struct {
 	smtp struct {
 		host     string
 		port     int
-		username string
-		password string
 	}
 	secretkey string
 	frontend string
@@ -62,11 +60,9 @@ func main() {
 	flag.IntVar(&cfg.port, "port", 4001, "Server port to listen on")
 	flag.StringVar(&cfg.env, "env", "development", "Application environment {development|production|maintenance}")
 	flag.StringVar(&cfg.db.dsn, "dsn", "ozan:password@tcp(localhost:3306)/widgets?parseTime=true&tls=false", "DSN")
-	flag.StringVar(&cfg.smtp.host, "smtphost", "smtp.mailtrap.io", "smtp host")
-	flag.StringVar(&cfg.smtp.username, "smtpuser", "30980d8770302b02e", "smtp user")
-	flag.StringVar(&cfg.smtp.password, "smtppass", "33c58457afcc76", "smtp password")
-	flag.IntVar(&cfg.smtp.port, "smtpport", 587, "smtp port")
-	flag.StringVar(&cfg.secretkey, "secret", "sk_test_51MoO9WGPP6DLZoEXDSwvQgxHvb4d43emLVfWLjUrmHhJZs5V5QaVyOzIqX5gZ3u4Y2SR3ODPW7ieRtUY1uaW4aOx00LobgQU8f", "secret key")
+	flag.StringVar(&cfg.smtp.host, "smtphost", "localhost", "smtp host")
+	flag.IntVar(&cfg.smtp.port, "smtpport", 1025, "smtp port")
+	flag.StringVar(&cfg.secretkey, "secret", "M0g4MtxcA7Pc4suNKwWXNy8jWq1XxbbF", "secret key")
 	flag.StringVar(&cfg.frontend, "frontend", "http://localhost:4000", "url to front end")
 
 	flag.Parse()

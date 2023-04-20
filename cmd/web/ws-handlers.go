@@ -72,6 +72,7 @@ func (app *application) ListenForWS(conn *WebSocketConnection) {
 		err := conn.ReadJSON(&payload)
 		if err != nil {
 			// do nothing
+			break
 		} else {
 			payload.Conn = *conn
 			wsChan <- payload
@@ -100,9 +101,9 @@ func (app *application) broadcastToAll(response WsJsonResponse) {
 		// broadcast to every connected client
 		err := client.WriteJSON(response)
 		if err != nil {
-			app.errorLog.Printf("Websocket err on %s: %s", response.Action, err)
 			_ = client.Close()
 			delete(clients, client)
+				
 		}
 	}
 }

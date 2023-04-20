@@ -69,7 +69,7 @@ func main() {
 	flag.StringVar(&cfg.env, "env", "development", "Application environment {development|production}")
 	flag.StringVar(&cfg.db.dsn, "dsn", "ozan:password@tcp(localhost:3306)/widgets?parseTime=true&tls=false", "DSN")
 	flag.StringVar(&cfg.api, "api", "http://localhost:4001", "URL to api")
-	flag.StringVar(&cfg.secretkey, "secret", "sk_test_51MoO9WGPP6DLZoEXDSwvQgxHvb4d43emLVfWLjUrmHhJZs5V5QaVyOzIqX5gZ3u4Y2SR3ODPW7ieRtUY1uaW4aOx00LobgQU8f", "secret key")
+	flag.StringVar(&cfg.secretkey, "secret", "M0g4MtxcA7Pc4suNKwWXNy8jWq1XxbbF", "secret key")
 	flag.StringVar(&cfg.frontend, "frontend", "http://localhost:4000", "url to front end")
 
 	flag.Parse()

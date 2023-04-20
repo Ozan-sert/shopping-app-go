@@ -123,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function formatCurrency(amount) {
     let c = parseFloat(amount / 100);
-    return c.toLocaleString("en-CA", {
+    return c.toLocaleString("en-US", {
         style: 'currency',
-        currency: 'CAD',
+        currency: 'USD',
     })
 }
 </script>

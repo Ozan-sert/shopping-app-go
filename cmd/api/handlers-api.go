@@ -188,7 +188,7 @@ func (app *application) CreateCustomerAndSubscribeToPlan(w http.ResponseWriter, 
 
 		txn := models.Transaction{
 			Amount:              amount,
-			Currency:            "cad",
+			Currency:            "usd",
 			LastFour:            data.LastFour,
 			ExpiryMonth:         data.ExpiryMonth,
 			ExpiryYear:          data.ExpiryYear,
