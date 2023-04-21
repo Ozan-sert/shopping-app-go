@@ -43,7 +43,7 @@ func (app *application) WsEndPoint(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	app.infoLog.Println(fmt.Sprintf("Client connected from %s", r.RemoteAddr))
+	app.infoLog.Printf("Client connected from %s", r.RemoteAddr)
 	var response WsJsonResponse
 	response.Message = "Connected to server"
 
@@ -101,9 +101,9 @@ func (app *application) broadcastToAll(response WsJsonResponse) {
 		// broadcast to every connected client
 		err := client.WriteJSON(response)
 		if err != nil {
+			app.errorLog.Printf("Websocket err on %s: %s", response.Action, err)
 			_ = client.Close()
 			delete(clients, client)
-				
 		}
 	}
 }

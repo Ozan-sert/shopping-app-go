@@ -2,3 +2,4 @@ Makefile
 tmp
 .air.toml
 database.yml
+invoices

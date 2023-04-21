@@ -179,7 +179,7 @@ let card;
                 } else {
                     document.getElementById("charge_form").classList.remove("was-validated");
 
-                    Object.entries(data.error).forEach((i) => {
+                    Object.entries(data.errors).forEach((i) => {
                         const [key, value] = i;
                         console.log(`${key}: ${value}`);
                         document.getElementById(key).classList.add("is-invalid");
